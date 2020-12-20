@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(#2c3e50), to(#fd746c));
+  background: linear-gradient(to right, #2c3e50, #fd746c);
+}
+
+body .container {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  width: 650px;
+  height: 450px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+body .container .quiz {
+  margin-top: 50px;
+}
+
+body .container .quiz .quiz-question {
+  margin-top: -25px;
+  margin-bottom: 25px;
+  font-size: 2.5em;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+}
+
+body .container .quiz .quiz-options {
+  margin-left: 15px;
+  height: 250px;
+}
+
+body .container .quiz .quiz-options input {
+  margin-bottom: 25px;
+}
+
+body .container .quiz .quiz-options label {
+  margin-left: 10px;
+  font-size: 1.75em;
+  font-family: "Montserrat", sans-serif;
+}
+
+body .container .quiz .quiz-options label:hover {
+  cursor: pointer;
+}
+
+body .container .submit {
+  display: none;
+}
+
+body .container .submit,
+body .container .next {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #000;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+body .container .next:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+body .results {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+}
+
+body .results .outof {
+  font-size: 2.75em;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+body .results .percentage {
+  margin-top: 25%;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+/*# sourceMappingURL=quiz.css.map */
