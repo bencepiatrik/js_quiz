@@ -23,9 +23,12 @@ let maxPercent = 0;
 let correctAnswer = 0;
 let percentage = 0;
 
+document.querySelector(`.question-stop-${current+1}`).style.backgroundColor = '#03D1DB'
+
 nextBtn.addEventListener("click", function() {
   setStopBg()
   current++;
+  document.querySelector(`.question-stop-${current+1}`).style.backgroundColor = '#03D1DB'
   answerContainer.forEach(container => {    
     container.style.pointerEvents = "auto";
     container.style.transition = "all 0s"
@@ -117,10 +120,10 @@ submitBtn.addEventListener('click', () => {
 
 let setStopBg = () => {
   if (goodAnswers[current]){
-    document.querySelector(`.right-${current+1}`).style.display = 'block'
+    document.querySelector(`.right-${current+1}`).style.transform = 'translate(-50%, -50%) scale(1)'
     document.querySelector(`.question-stop-${current+1}`).style.backgroundColor = '#AAD8D3'
   } else {
-    document.querySelector(`.wrong-${current+1}`).style.display = 'block'
+    document.querySelector(`.wrong-${current+1}`).style.transform = 'translate(-50%, -50%) scale(1)'
     document.querySelector(`.question-stop-${current+1}`).style.backgroundColor = '#EDA3A3'
   }
 }
@@ -133,6 +136,5 @@ btns.forEach(btn => {
   })
   btn.addEventListener('mouseleave', () => {
     btnTriangle.style.bottom = '-95px'  
-
   })
 })
