@@ -4,21 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>js quiz</title>
   <link rel="stylesheet" href="./quiz.css">
   <link rel="stylesheet" href="">
-  
 </head>
+
 <body>
-  <div class="container">
-    <div class="quiz"></div>
-    <button class="submit">Show results</button>
-    <button class="next">Next Question</button>
-    <div class="results"></div>
+  <div class="progressbar">
+    <div class="question-stop question-stop-1">
+      <img class="right right-1" src="./right.png" alt="">
+      <img class="wrong wrong-1" src="./wrong.png" alt="">
+    </div>
+    <div class="question-stop question-stop-2">
+      <img class="right right-2" src="./right.png" alt="">
+      <img class="wrong wrong-2" src="./wrong.png" alt="">
+    </div>
+    <div class="question-stop question-stop-3">
+      <img class="right right-3" src="./right.png" alt="">
+      <img class="wrong wrong-3" src="./wrong.png" alt="">
+    </div>
+    <div class="question-stop question-stop-4">
+      <img class="right right-4" src="./right.png" alt="">
+      <img class="wrong wrong-4" src="./wrong.png" alt="">
+    </div>
+    <div class="question-stop question-stop-5">
+      <img class="right right-5" src="./right.png" alt="">
+      <img class="wrong wrong-5" src="./wrong.png" alt="">
+    </div>
   </div>
 
-  <script src=""></script>
+  <div class="quiz-container">
+    <h2 class="quiz-question"></h2>
+    <div class="quiz-answers">
+      <div id="0" class="answer-container answer-1-container">
+        <h4 class="answer quiz-answer-1"></h4>
+      </div>
+      <div id="1" class="answer-container answer-2-container">
+        <h4 class="answer quiz-answer-2"></h4>
+      </div>
+      <div id="2" class="answer-container answer-3-container">
+        <h4 class="answer quiz-answer-3"></h4>
+      </div>
+      <div id="3" class="answer-container answer-4-container">
+        <h4 class="answer quiz-answer-4"></h4>
+      </div>
+    </div>
+    <div class="settings">
+      <p>skip</p>
+      <div class="divide"></div>
+      <p>report</p>
+    </div>
+    <button class="next-question">NEXT</button>
+    <div class="btn-triangle"></div>
+    <div class="container-circle"></div>
+    <div class="results"></div>
+    <button class="submit">RESULTS</button>
+  </div>
+
+  <script src="./questions.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>

@@ -4,89 +4,162 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
+
 body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to right, #2c3e50, #fd746c);
-  .container {
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    width: 650px;
-    height: 450px;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%);
-    .quiz {
-      margin-top: 50px;
-      .quiz-question {
-        margin-top: -25px;
-        margin-bottom: 25px;
-        font-size: 2.5em;
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: 2px;
-        font-weight: 500;
-        text-align: center;
-      }
-      .quiz-options {
-        margin-left: 15px;
-        height: 250px;
-        input {
-          margin-bottom: 25px;
-        }
-        label {
-          margin-left: 10px;
-          font-size: 1.75em;
-          font-family: "Montserrat", sans-serif;
-        }
-        label:hover {
-          cursor: pointer;
-        }
-      }
-    }
-    .submit {
+  background-color: #f6f6f6;
+}
+
+.progressbar {
+  height: 80vh;
+  width: 5px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  background-color: #cbcbcb;
+  .question-stop {
+    position: relative;
+    left: -15px;
+    margin: 75px 0 75px 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #e7e7e7;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: none;
     }
-    .submit,
-    .next {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 600;
-      font-size: 1.5em;
-      padding: 10px 20px;
-      background: transparent;
-      border: 1px solid #000;
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translate(-50%);
+  }
+  .question-stop:first-child {
+    margin-top: 100px;
+  }
+}
+
+.quiz-container {
+  overflow: hidden;
+  width: 750px;
+  height: 40vh;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  .quiz-question {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+  }
+  .quiz-answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    height: auto;
+    padding: 150px 100px 0 100px;
+    .answer-container {
+      cursor: pointer;
+      height: 3em;
+      background-color: #e7e7e7;
+      transition: all 0.25s ease-in-out;
+      display: flex;
+      align-items: center;
+      pointer-events: auto;
+
+      .answer {
+        width: 100%;
+        text-align: center;
+      }
     }
-    .next:hover {
-      background: rgba(255, 255, 255, 0.25);
+  }
+  .settings {
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    p {
+      cursor: pointer;
+      opacity: 0.75;
+      transition: all 0.25s;
     }
+    p:hover {
+      opacity: 0.25;
+    }
+    .divide {
+      width: 2px;
+      height: 30px;
+      background-color: #00adb5;
+      margin: 0 10px 0 10px;
+    }
+  }
+  .next-question {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.5em;
+    opacity: 0.25;
+    font-weight: 900;
+  }
+  .btn-triangle {
+    position: absolute;
+    bottom: -95px;
+    left: calc(50%);
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%) rotate(45deg);
+    background-color: #03d1db;
+    transition: all 0.5s;
+  }
+  .container-circle {
+    height: 150px;
+    width: 150px;
+    background-color: #aad8d3;
+    border-radius: 100%;
+    position: absolute;
+    bottom: -20%;
+    right: -5%;
+  }
+  .results,
+  .submit {
+    display: none;
+  }
+  .submit {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.5em;
+    opacity: 0.25;
+    font-weight: 900;
   }
   .results {
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 30%;
     transform: translate(-50%, -50%);
-    display: none;
-    .outof {
-      font-size: 2.75em;
-      font-family: "Montserrat", sans-serif;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
     .percentage {
-      margin-top: 25%;
-      font-size: 2em;
-      font-family: "Montserrat", sans-serif;
-      letter-spacing: 2px;
-      font-weight: 300;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      transition: all 1s;
+      text-align: center;
     }
   }
 }
